@@ -13,12 +13,13 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+                                <Label Content="{Binding id}" Margin="0,30,0,0"></Label>
                                 <Image Source="{Binding avatar}" Height="100" Width="100"></Image>
                                 <TextBlock Text="{Binding nasurfath}" Margin="0,38,0,0" FontSize="14" FontWeight="DemiBold"></TextBlock>
                                 <RadioButton Margin="80,40,0,0" BorderBrush="Green"></RadioButton>
                                 <RadioButton Margin="0,40,0,0"  BorderBrush="Yellow"></RadioButton>
                                 <RadioButton Margin="0,40,0,0"  BorderBrush="RED"></RadioButton>
-                                <ComboBox Margin="35,5,0,0" Width="40" Height="25">
+                                <ComboBox Margin="35,5,0,0" Width="40" Height="25" SelectionChanged="ComboBox_SelectionChanged">
                                     <ComboBoxItem>1</ComboBoxItem>
                                     <ComboBoxItem>2</ComboBoxItem>
                                     <ComboBoxItem>3</ComboBoxItem>
@@ -35,14 +36,47 @@
                                 <Button Margin="25,0,0,0" Width="40" Height="40" Background="Transparent" BorderThickness="0" Click="Button_Click">
                                     <Image Source="Pictures\icons8-message-100.png" Width="40" Height="40"></Image>
                                 </Button>
-                                <TextBox Visibility="Hidden" Height="25" Width="230" AcceptsReturn="True" Margin="20,0,0,0" FontSize="14"></TextBox>
+                                <TextBox Visibility="Hidden" Height="25" Width="230" AcceptsReturn="True" Margin="20,0,0,0" FontSize="14" TextChanged="TextBox_TextChanged" Text="{Binding comment}"></TextBox>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
             </TabItem>
-            <TabItem Header="Qosa 2"></TabItem>
+            <TabItem Header="Qosa 2">
+                <ListView Name="Qosa2" Background="LightBlue">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+                                <Label Content="{Binding id}" Margin="0,30,0,0"></Label>
+                                <Image Source="{Binding avatar}" Height="100" Width="100"></Image>
+                                <TextBlock Text="{Binding nasurfath}" Margin="0,38,0,0" FontSize="14" FontWeight="DemiBold"></TextBlock>
+                                <RadioButton Margin="80,40,0,0" BorderBrush="Green"></RadioButton>
+                                <RadioButton Margin="0,40,0,0"  BorderBrush="Yellow"></RadioButton>
+                                <RadioButton Margin="0,40,0,0"  BorderBrush="RED"></RadioButton>
+                                <ComboBox Margin="35,5,0,0" Width="40" Height="25" SelectionChanged="ComboBox_SelectionChanged">
+                                    <ComboBoxItem>1</ComboBoxItem>
+                                    <ComboBoxItem>2</ComboBoxItem>
+                                    <ComboBoxItem>3</ComboBoxItem>
+                                    <ComboBoxItem>4</ComboBoxItem>
+                                    <ComboBoxItem>5</ComboBoxItem>
+                                    <ComboBoxItem>6</ComboBoxItem>
+                                    <ComboBoxItem>7</ComboBoxItem>
+                                    <ComboBoxItem>8</ComboBoxItem>
+                                    <ComboBoxItem>9</ComboBoxItem>
+                                    <ComboBoxItem>10</ComboBoxItem>
+                                    <ComboBoxItem>11</ComboBoxItem>
+                                    <ComboBoxItem>12</ComboBoxItem>
+                                </ComboBox>
+                                <Button Margin="25,0,0,0" Width="40" Height="40" Background="Transparent" BorderThickness="0" Click="Button_Click">
+                                    <Image Source="Pictures\icons8-message-100.png" Width="40" Height="40"></Image>
+                                </Button>
+                                <TextBox Visibility="Hidden" Height="25" Width="230" AcceptsReturn="True" Margin="20,0,0,0" FontSize="14" TextChanged="TextBox_TextChanged" Text="{Binding comment}"></TextBox>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </TabItem>
         </TabControl>
-        <Button Width="60" Height="45" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,25" BorderThickness="0" Background="LightCoral" FontSize="16" FontWeight="Bold">Save</Button>
+        <Button Width="60" Height="45" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,25" BorderThickness="0" Background="LightCoral" FontSize="16" FontWeight="Bold" Click="Button_Click_1">Save</Button>
     </Grid>
 </Window>
